@@ -1,0 +1,4 @@
+{
+  "name": "StatusLights",
+  "build": { "libArchive": false}
+}
