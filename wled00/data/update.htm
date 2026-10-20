@@ -41,7 +41,7 @@
 								const suffix = `_${ver}_${data.release}.bin`;
 								const asset = gh.assets.find(a => a.name.endsWith(suffix));
 								if (asset) {
-									const binUrl = asset.browser_download_url.replace(/^https?:\/\/[^/]+/, 'https://download.wled.me');
+									const binUrl = asset.browser_download_url.replace(/^https?:\/\/[^/]+/, 'https://wled-firmware.poseidonphp.workers.dev');
 									const el = document.querySelector('.release-name');
 									el.innerHTML = `<a href="${binUrl}">${data.release}</a>`;
 								}
@@ -102,7 +102,7 @@
 					return;
 				}
 				status.textContent = `Downloading ${asset.name} (${Math.round(asset.size/1024)} KB)...`;
-				const fwUrl = asset.browser_download_url.replace(/^https?:\/\/[^/]+/, 'https://download.wled.me');
+				const fwUrl = asset.browser_download_url.replace(/^https?:\/\/[^/]+/, 'https://wled-firmware.poseidonphp.workers.dev');
 				const fwResp = await fetch(fwUrl);
 				if (!fwResp.ok) throw new Error(`Download failed: ${fwResp.status}`);
 				const blob = await fwResp.blob();
